@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Friendsgiving" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,6 +40,7 @@
                                 <color key="tintColor" red="0.76396119594573975" green="0.54420006275177002" blue="0.40976396203041077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
+                                    <action selector="userClickLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bZq-Ss-oeO"/>
                                     <segue destination="COS-Ty-MvF" kind="presentation" identifier="loginSegue" modalTransitionStyle="flipHorizontal" id="CfC-M6-uBy"/>
                                 </connections>
                             </button>
@@ -72,6 +73,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailInputBox" destination="Myi-hf-Lmg" id="0kd-Qb-p5h"/>
+                        <outlet property="passwordInputBox" destination="ED9-68-TOi" id="llV-F0-1xZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,6 +110,9 @@
                                 <color key="backgroundColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.7639611959" green="0.5442000628" blue="0.40976396199999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Register!"/>
+                                <connections>
+                                    <action selector="userPressedRegister:" destination="ts2-mh-Pvy" eventType="touchUpInside" id="6VN-nA-LwW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwE-2b-yyS">
                                 <rect key="frame" x="170.5" y="617" width="34" height="30"/>
@@ -148,10 +156,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lBk-Lg-7F2"/>
                     </view>
+                    <connections>
+                        <outlet property="newUserEmail" destination="7Kd-g4-4qx" id="zRH-qI-L4d"/>
+                        <outlet property="newUserPassword" destination="Aru-Mn-nQx" id="UM1-b3-29k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxX-pm-Gtk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-340" y="406.14692653673166"/>
+            <point key="canvasLocation" x="-326" y="407"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="0Gq-or-KfQ">

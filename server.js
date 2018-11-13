@@ -22,8 +22,9 @@ mongoose.connect('mongodb://localhost/friendsGiving', { useNewUrlParser: true })
 
 // user require a name and email to register
 const UserSchema = new mongoose.Schema({
-    name: { type: String, required: [true, 'Author name cannot be empty'], minlength: [2, 'Name must be 2 characters or longer'] },
-    email: { type: String, required: true }
+    name: { type: String }, // required: [true, 'Author name cannot be empty'], minlength: [2, 'Name must be 2 characters or longer'] },
+    email: { type: String, required: true },
+    password: { type: String, require: true }
 }, { timestamps: true })
 
 // dishes are submitted with a lable, e.g., name of the dish along with the submitted user id
@@ -104,7 +105,21 @@ app.post('/addDishByEvent/:id', (req, res) => {
     })
 })
 
-// find user by ID
+
+app.post('/addUser', (req, res) => {
+    User.create(req.body, (err, data) => {
+        if (err) {
+            console.log('Encountered error adding user');
+            res.json(err);
+        }
+        else {
+            console.log('Successfully added user -> ', data);
+            res.json(data);
+        }
+    })
+})
+
+// find, get user by ID
 app.get('/user/:id', (req, res) => {
     User.findOne({ _id: req.params.id}, (err, data) => {
         if (err) {

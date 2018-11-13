@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1ACBB04219B7B4900B8654A /* FriendsToo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1ACBB02219B7B4900B8654A /* FriendsToo.xcdatamodeld */; };
 		E10F2C04219B5FAB00A10314 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10F2C03219B5FAB00A10314 /* RegisterViewController.swift */; };
 		E12E71B7219B55FE009417FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E71B6219B55FE009417FC /* AppDelegate.swift */; };
 		E12E71B9219B55FE009417FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E71B8219B55FE009417FC /* LoginViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C1ACBB03219B7B4900B8654A /* FriendsToo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FriendsToo.xcdatamodel; sourceTree = "<group>"; };
 		E10F2C03219B5FAB00A10314 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E12E71B3219B55FE009417FC /* Friendsgiving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friendsgiving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12E71B6219B55FE009417FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				E12E71B6219B55FE009417FC /* AppDelegate.swift */,
+				C1ACBB02219B7B4900B8654A /* FriendsToo.xcdatamodeld */,
 				E12E71B8219B55FE009417FC /* LoginViewController.swift */,
 				E12E71BA219B55FE009417FC /* Main.storyboard */,
 				E10F2C03219B5FAB00A10314 /* RegisterViewController.swift */,
@@ -266,6 +269,7 @@
 				E12E71BF219B55FE009417FC /* Friendsgiving.xcdatamodeld in Sources */,
 				E12E71B7219B55FE009417FC /* AppDelegate.swift in Sources */,
 				E10F2C04219B5FAB00A10314 /* RegisterViewController.swift in Sources */,
+				C1ACBB04219B7B4900B8654A /* FriendsToo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JMXX4VVCD2;
+				DEVELOPMENT_TEAM = 8FR7YHCTKS;
 				INFOPLIST_FILE = Friendsgiving/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -459,7 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JMXX4VVCD2;
+				DEVELOPMENT_TEAM = 8FR7YHCTKS;
 				INFOPLIST_FILE = Friendsgiving/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -596,6 +600,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		C1ACBB02219B7B4900B8654A /* FriendsToo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C1ACBB03219B7B4900B8654A /* FriendsToo.xcdatamodel */,
+			);
+			currentVersion = C1ACBB03219B7B4900B8654A /* FriendsToo.xcdatamodel */;
+			path = FriendsToo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		E12E71BD219B55FE009417FC /* Friendsgiving.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
