@@ -41,7 +41,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="userClickLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bZq-Ss-oeO"/>
-                                    <segue destination="bVt-PW-8fB" kind="presentation" identifier="loginSegue" modalTransitionStyle="flipHorizontal" id="CfC-M6-uBy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r18-9u-gxL">
@@ -77,6 +76,7 @@
                     <connections>
                         <outlet property="emailInputBox" destination="Myi-hf-Lmg" id="0kd-Qb-p5h"/>
                         <outlet property="passwordInputBox" destination="ED9-68-TOi" id="llV-F0-1xZ"/>
+                        <segue destination="bVt-PW-8fB" kind="presentation" identifier="loginSegue" id="hEk-pj-DzG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -231,6 +231,9 @@
                     <navigationItem key="navigationItem" title="Friendsgiving Events" id="kL9-CD-wdA">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="vLe-2x-d2f">
                             <color key="tintColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="logOutPressed:" destination="COS-Ty-MvF" id="3XL-cw-oZm"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Event" id="PIf-tc-hSe">
                             <color key="tintColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -242,7 +245,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPZ-ED-g8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3276" y="-519"/>
+            <point key="canvasLocation" x="2882" y="-618"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="rVO-AH-aJz">
@@ -312,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pk-oM-NsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4362" y="-408"/>
+            <point key="canvasLocation" x="4681" y="-318"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MMc-IC-OHW">
@@ -348,7 +351,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8Y-Zm-miX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2462" y="-156"/>
+            <point key="canvasLocation" x="2130" y="-366"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LuW-o4-rZ9">
@@ -384,7 +387,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iry-G8-CAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4230" y="-1268"/>
+            <point key="canvasLocation" x="4458" y="-1325"/>
         </scene>
     </scenes>
     <resources>

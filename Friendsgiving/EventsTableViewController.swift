@@ -12,9 +12,16 @@ class EventsTableViewController: UITableViewController, EventsDelegate {
 
     let url = URL(string: "http://localhost:8000/events")!
     
-    var userInfo: HotPotato?
-    
+    var userInfo: [HotPotato]?
+    var delegate: EventsTableDelegate?
     var eventsData: [Dictionary<String, Any>]?
+    
+    
+    @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
+        delegate?.dismissed()
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

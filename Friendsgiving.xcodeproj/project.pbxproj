@@ -11,6 +11,7 @@
 		C1ACBB04219B7B4900B8654A /* FriendsToo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1ACBB02219B7B4900B8654A /* FriendsToo.xcdatamodeld */; };
 		C1F1C1A8219BD8B400BA7065 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F1C1A7219BD8B400BA7065 /* AddEventViewController.swift */; };
 		C1F1C1AA219BDFBA00BA7065 /* EventsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F1C1A9219BDFBA00BA7065 /* EventsDelegate.swift */; };
+		C1F1C1AC219C884600BA7065 /* EventsTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F1C1AB219C884600BA7065 /* EventsTableDelegate.swift */; };
 		E10F2C04219B5FAB00A10314 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10F2C03219B5FAB00A10314 /* RegisterViewController.swift */; };
 		E12E71B7219B55FE009417FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E71B6219B55FE009417FC /* AppDelegate.swift */; };
 		E12E71B9219B55FE009417FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E71B8219B55FE009417FC /* LoginViewController.swift */; };
@@ -46,6 +47,7 @@
 		C1ACBB03219B7B4900B8654A /* FriendsToo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FriendsToo.xcdatamodel; sourceTree = "<group>"; };
 		C1F1C1A7219BD8B400BA7065 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		C1F1C1A9219BDFBA00BA7065 /* EventsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDelegate.swift; sourceTree = "<group>"; };
+		C1F1C1AB219C884600BA7065 /* EventsTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableDelegate.swift; sourceTree = "<group>"; };
 		E10F2C03219B5FAB00A10314 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E12E71B3219B55FE009417FC /* Friendsgiving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friendsgiving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12E71B6219B55FE009417FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				E12E71C2219B5601009417FC /* LaunchScreen.storyboard */,
 				E12E71C5219B5601009417FC /* Info.plist */,
 				E12E71BD219B55FE009417FC /* Friendsgiving.xcdatamodeld */,
+				C1F1C1AB219C884600BA7065 /* EventsTableDelegate.swift */,
 			);
 			path = Friendsgiving;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				E12E71B9219B55FE009417FC /* LoginViewController.swift in Sources */,
 				C19A63FE219BCF8400FE33F1 /* RegisterDelegate.swift in Sources */,
 				E12E71BF219B55FE009417FC /* Friendsgiving.xcdatamodeld in Sources */,
+				C1F1C1AC219C884600BA7065 /* EventsTableDelegate.swift in Sources */,
 				E18263E5219BA697004F7F66 /* EventsTableViewController.swift in Sources */,
 				E12E71B7219B55FE009417FC /* AppDelegate.swift in Sources */,
 				E18263E7219BA773004F7F66 /* EventCellTableViewCell.swift in Sources */,

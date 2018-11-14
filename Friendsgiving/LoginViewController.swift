@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class LoginViewController: UIViewController, RegisterDelegate {
+class LoginViewController: UIViewController, RegisterDelegate, EventsTableDelegate {
     
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -35,6 +35,7 @@ class LoginViewController: UIViewController, RegisterDelegate {
                         let json = try JSONSerialization.jsonObject(with: userData, options: []) as! Dictionary<String, Any>
                         print(json)
                         
+                        
                     } catch {
                         print(error)
                     }
@@ -43,6 +44,7 @@ class LoginViewController: UIViewController, RegisterDelegate {
         } else {
             return
         }
+        performSegue(withIdentifier: "loginSegue", sender: self)
 
     }
     
@@ -63,10 +65,11 @@ class LoginViewController: UIViewController, RegisterDelegate {
             destination.delegate = self
         }
 
-//        if segue.identifier == "loginSegue" {
-//            let destination = navController.topViewController as! EventsTableViewController
-//            destination.userInfo = thisUser[0]
-//        }
+        if segue.identifier == "loginSegue" {
+            let destination = navController.topViewController as! EventsTableViewController
+            destination.userInfo = thisUser
+            destination.delegate = self
+        }
     }
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
