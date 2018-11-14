@@ -168,7 +168,8 @@
                         <viewLayoutGuide key="safeArea" id="lBk-Lg-7F2"/>
                     </view>
                     <connections>
-                        <outlet property="newUserEmail" destination="7Kd-g4-4qx" id="zRH-qI-L4d"/>
+                        <outlet property="newUserEmail" destination="UiP-1q-uf6" id="k5N-fT-Bd8"/>
+                        <outlet property="newUserName" destination="7Kd-g4-4qx" id="XMU-m3-GVJ"/>
                         <outlet property="newUserPassword" destination="Aru-Mn-nQx" id="UM1-b3-29k"/>
                     </connections>
                 </viewController>

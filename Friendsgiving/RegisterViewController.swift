@@ -15,6 +15,8 @@ class RegisterViewController: UIViewController {
     let url = URL(string: "http://localhost:8000/addUser")!
     
 
+
+    @IBOutlet weak var newUserName: UITextField!
     @IBOutlet weak var newUserEmail: UITextField!
     @IBOutlet weak var newUserPassword: UITextField!
     
