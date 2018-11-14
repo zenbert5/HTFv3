@@ -150,6 +150,21 @@ app.get('/getUser/:email', (req, res) => {
 })
 
 
+// dishes by event id
+app.get('/getDishes/:eventId', (req, res) => {
+    Event.findOne({ _id: req.params.eventId}, (err, data) => {
+        if (err) {
+            console.log('Encountered error locating dishes by event Id: ', req.params.eventId);
+            res.json(err);
+        }
+        else {
+            console.log('Successfully located event data', data);
+            res.json(data);
+        }
+    })
+})
+
+
 // update a dish by the dish's id (not event)
 // ** iOS front-end will fetch and retain event id for purpose of query and update **
 app.put('/updateDish/:id', (req, res) => {

@@ -78,6 +78,8 @@ class EventsTableViewController: UITableViewController, EventsDelegate {
             destination.delegate = self
         } else if let destination = nc.topViewController as? DetailsViewController {
             destination.delegate = self
+            let event = sender as! Dictionary<String, Any>
+            destination.event = event
         }
     }
     
@@ -89,7 +91,7 @@ class EventsTableViewController: UITableViewController, EventsDelegate {
     }
 
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        performSegue(withIdentifier: "eventDetailsSegue", sender: nil)
+        performSegue(withIdentifier: "eventDetailsSegue", sender: eventsData[indexPath.row])
     }
 }
 

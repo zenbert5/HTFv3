@@ -264,32 +264,28 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.95652300119400024" green="0.93484324216842651" blue="0.87787014245986938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="YQV-3k-i52" userLabel="DishCell" customClass="DishTableViewCell" customModule="Friendsgiving" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DishCell" rowHeight="60" id="YQV-3k-i52" userLabel="DishCell" customClass="DishTableViewCell" customModule="Friendsgiving" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="335" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YQV-3k-i52" id="Z1X-jb-Igr" customClass="DishTableViewCell" customModule="Friendsgiving" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWG-sF-LiJ">
-                                                    <rect key="frame" x="149.5" y="19" width="36" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWG-sF-LiJ">
+                                                    <rect key="frame" x="150" y="19" width="170" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVN-a4-oBz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVN-a4-oBz">
                                                     <rect key="frame" x="23" y="20" width="35" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="pWG-sF-LiJ" firstAttribute="centerY" secondItem="WVN-a4-oBz" secondAttribute="centerY" id="4qR-4N-5YB"/>
-                                                <constraint firstItem="WVN-a4-oBz" firstAttribute="leading" secondItem="Z1X-jb-Igr" secondAttribute="leadingMargin" constant="8" id="RJV-qv-Otp"/>
-                                                <constraint firstItem="pWG-sF-LiJ" firstAttribute="centerY" secondItem="Z1X-jb-Igr" secondAttribute="centerY" id="v6O-yl-zva"/>
-                                                <constraint firstItem="pWG-sF-LiJ" firstAttribute="centerX" secondItem="Z1X-jb-Igr" secondAttribute="centerX" id="ycs-kr-QGV"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95652300119400024" green="0.93484324216842651" blue="0.87787014245986938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
@@ -368,11 +364,12 @@
                         <barButtonItem key="rightBarButtonItem" title="Add Dish" id="JYX-ef-C3u">
                             <color key="tintColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="n8N-kR-ENj" kind="presentation" id="P2Y-yo-TH6"/>
+                                <segue destination="n8N-kR-ENj" kind="presentation" identifier="addToDishSegue" id="P2Y-yo-TH6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="detailsTableView" destination="O9X-Sa-g6l" id="MbV-co-HKw"/>
                         <outlet property="eventDateLabel" destination="LEa-SV-c8g" id="svV-UP-Wt4"/>
                         <outlet property="eventLocationLabel" destination="ABD-F9-XON" id="esn-qG-vhk"/>
                         <outlet property="eventNameLabel" destination="WvQ-an-URb" id="rnx-pJ-BIz"/>
@@ -381,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GfE-7K-TvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4710" y="132"/>
+            <point key="canvasLocation" x="4589.6000000000004" y="-47.226386806596707"/>
         </scene>
         <!--Add Dish-->
         <scene sceneID="HEa-xR-p6W">
@@ -410,15 +407,25 @@
                     <navigationItem key="navigationItem" title="Add Dish" id="1fC-X2-uGF">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aW8-TZ-qpU">
                             <color key="tintColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cancelPressed:" destination="W1e-gj-kBx" id="wPl-L9-Qol"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="a0A-j2-qXH">
                             <color key="tintColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="saveDish:" destination="W1e-gj-kBx" id="Vec-xY-t60"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newDish" destination="jPC-w0-6jd" id="bS1-X8-aJh"/>
+                        <outlet property="newDishName" destination="jPC-w0-6jd" id="YSl-ue-OXG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFl-2y-0h4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6306" y="560"/>
+            <point key="canvasLocation" x="7281" y="314"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="rVO-AH-aJz">
@@ -596,7 +603,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vS9-yv-T7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5497" y="482"/>
+            <point key="canvasLocation" x="5716" y="809"/>
         </scene>
     </scenes>
     <resources>
