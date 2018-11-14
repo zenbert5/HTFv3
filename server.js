@@ -134,6 +134,22 @@ app.get('/user/:id', (req, res) => {
     })
 })
 
+
+// fetch user by email 
+app.get('/getUser/:email', (req, res) => {
+    User.findOne({ email: req.params.email}, (err, data) => {
+        if (err) {
+            console.log('Encountered error locating user by email: ', req.params.email);
+            res.json(err);
+        }
+        else {
+            console.log('Successfully located user ', data);
+            res.json(data);
+        }
+    })
+})
+
+
 // update a dish by the dish's id (not event)
 // ** iOS front-end will fetch and retain event id for purpose of query and update **
 app.put('/updateDish/:id', (req, res) => {

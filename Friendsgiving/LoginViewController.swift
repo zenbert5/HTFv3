@@ -19,6 +19,31 @@ class LoginViewController: UIViewController, RegisterDelegate {
     @IBOutlet weak var passwordInputBox: UITextField!
     
     @IBAction func userClickLogin(_ sender: UIButton) {
+        
+        if let email = emailInputBox.text {
+            let url = URL(string: "http://localhost:8000/getUser/" + email)!
+            print("fetching user with url ->", url)
+            let request = URLRequest(url: url)
+            let session = URLSession.shared
+            
+            session.dataTask(with: request, completionHandler: {
+                // see: Swift closure expression syntax
+                data, response, error in
+                
+                if let userData = data {
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: userData, options: []) as! Dictionary<String, Any>
+                        print(json)
+                        
+                    } catch {
+                        print(error)
+                    }
+                }
+            })
+        } else {
+            return
+        }
+
     }
     
     override func viewDidLoad() {
@@ -38,10 +63,10 @@ class LoginViewController: UIViewController, RegisterDelegate {
             destination.delegate = self
         }
 
-        if segue.identifier == "loginSegue" {
-            let destination = navController.topViewController as! EventsTableViewController
-            destination.userInfo = thisUser[0]
-        }
+//        if segue.identifier == "loginSegue" {
+//            let destination = navController.topViewController as! EventsTableViewController
+//            destination.userInfo = thisUser[0]
+//        }
     }
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,7 +82,10 @@ class LoginViewController: UIViewController, RegisterDelegate {
             thisUser = result as! [HotPotato]
             if thisUser.count == 0 {
                 print("no user")
-                
+            } else {
+                for data in thisUser {
+                    print(data)
+                }
             }
         } catch {
             print("\(error)")
