@@ -28,12 +28,20 @@ class LoginViewController: UIViewController {
         checkUserExist()
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let navController = segue.destination as! UINavigationController
-//        
-//        _ = navController.topViewController as! RegisterViewController
-//        
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navController = segue.destination as! UINavigationController
+        
+        if segue.identifier == "registerSegue" {
+            let destination = navController.topViewController as! RegisterViewController
+        }
+        
+        if segue.identifier == "loginSegue" {
+            let destination =
+        }
+        
+        
+        destination.userInfo = thisUser
+    }
 
     func checkUserExist() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "HotPotato")
@@ -43,7 +51,6 @@ class LoginViewController: UIViewController {
             if thisUser.count == 0 {
                 print("no user")
             }
-            
         } catch {
             print("\(error)")
         }

@@ -36,9 +36,15 @@ class RegisterViewController: UIViewController {
         let task = session.dataTask(with: request, completionHandler: {
             // see: Swift closure expression syntax
             data, response, error in
-            // data -> JSON data, response -> headers and other meta-information, error-> if one occurred
-            // "do-try-catch" blocks execute a try statement and then use the catch statement for errors
-            print(data as Any)
+
+            if let userAddRes = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: userAddRes, options: [])
+                    print(json)
+                } catch {
+                    print(error)
+                }
+            }
         })
         task.resume()
     }
@@ -48,16 +54,5 @@ class RegisterViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
