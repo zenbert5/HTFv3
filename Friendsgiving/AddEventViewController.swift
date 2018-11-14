@@ -22,7 +22,7 @@ class AddEventViewController: UIViewController {
     
     
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
-        delegate?.dismissed()
+        delegate?.dismissed(reload: false)
     }
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
@@ -65,9 +65,12 @@ class AddEventViewController: UIViewController {
                     print(error)
                 }
             }
+            
+            DispatchQueue.main.async {
+                self.delegate?.dismissed(reload: true)
+            }
         })
         task.resume()
-    
     }
     
     @objc func newDateHandler(sender: UIDatePicker) {

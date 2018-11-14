@@ -16,7 +16,7 @@ class EventsTableViewController: UITableViewController, EventsDelegate {
     var delegate: EventsTableDelegate?
     var eventsData = [Dictionary<String, Any>]()
     
-    
+    @IBOutlet var eventsTableView: UITableView!
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
         delegate?.dismissed()
     }
@@ -71,13 +71,25 @@ class EventsTableViewController: UITableViewController, EventsDelegate {
         return cell
     }
     
-    func addAnEvent(_ eventInfo: Dictionary<String, Any>) {
-        //
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nc = segue.destination as! UINavigationController
+        
+        if let destination = nc.topViewController as? AddEventViewController {
+            destination.delegate = self
+        } else if let destination = nc.topViewController as? DetailsViewController {
+            destination.delegate = self
+        }
     }
     
-    func dismissed() {
+    func dismissed(reload: Bool) {
         dismiss(animated: true, completion: nil)
+        if reload {
+            self.viewDidLoad()
+        }
     }
-    
+
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        performSegue(withIdentifier: "eventDetailsSegue", sender: nil)
+    }
 }
 

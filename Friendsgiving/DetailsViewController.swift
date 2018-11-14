@@ -14,6 +14,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var eventUserLabel: UILabel!
     @IBOutlet weak var eventLocationLabel: UILabel!
     
+    var delegate:EventsDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,5 +23,8 @@ class DetailsViewController: UIViewController {
     }
     
 
-
+    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+        delegate!.dismissed(reload: false)
+    }
+    
 }

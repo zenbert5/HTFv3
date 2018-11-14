@@ -9,6 +9,5 @@
 import UIKit
 
 protocol EventsDelegate: class {
-    func addAnEvent(_ eventInfo: Dictionary<String, Any>)
-    func dismissed()
+    func dismissed(reload: Bool)
 }
