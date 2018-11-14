@@ -41,7 +41,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="userClickLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bZq-Ss-oeO"/>
-                                    <segue destination="COS-Ty-MvF" kind="presentation" identifier="loginSegue" modalTransitionStyle="flipHorizontal" id="CfC-M6-uBy"/>
+                                    <segue destination="bVt-PW-8fB" kind="presentation" identifier="loginSegue" modalTransitionStyle="flipHorizontal" id="CfC-M6-uBy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r18-9u-gxL">
@@ -166,22 +166,52 @@
             </objects>
             <point key="canvasLocation" x="137" y="478"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Friendsgiving-->
         <scene sceneID="0Gq-or-KfQ">
             <objects>
-                <tableViewController id="COS-Ty-MvF" sceneMemberID="viewController">
+                <tableViewController id="COS-Ty-MvF" customClass="EventsTableViewController" customModule="Friendsgiving" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XKl-PX-z7s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TYp-tt-HPW">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" rowHeight="110" id="TYp-tt-HPW" userLabel="EventCell" customClass="EventCellTableViewCell" customModule="Friendsgiving" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TYp-tt-HPW" id="8m4-Gb-Zoc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="109.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9Q-gW-8X4">
+                                            <rect key="frame" x="16" y="11" width="93" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Host Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mta-eI-QIO">
+                                            <rect key="frame" x="16" y="40" width="86" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4Y-JH-xaf">
+                                            <rect key="frame" x="215" y="11" width="84" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.95652300119400024" green="0.93484324216842651" blue="0.87787014245986938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="eventDate" destination="N4Y-JH-xaf" id="0fQ-32-IXT"/>
+                                    <outlet property="eventHost" destination="Mta-eI-QIO" id="e0W-WP-BVa"/>
+                                    <outlet property="eventName" destination="b9Q-gW-8X4" id="5vO-WZ-uYu"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -189,10 +219,18 @@
                             <outlet property="delegate" destination="COS-Ty-MvF" id="GyW-ez-S8a"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Friendsgiving" id="kL9-CD-wdA">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="vLe-2x-d2f">
+                            <color key="tintColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add Event" id="PIf-tc-hSe">
+                            <color key="tintColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPZ-ED-g8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1655.2" y="-267.61619190404798"/>
+            <point key="canvasLocation" x="2655.1999999999998" y="-171.36431784107947"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MMc-IC-OHW">
@@ -211,6 +249,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ih7-KM-ce9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-247.19999999999999" y="-346.77661169415296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y0z-RA-xMq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bVt-PW-8fB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aAj-0J-kH7">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="COS-Ty-MvF" kind="relationship" relationship="rootViewController" id="h5W-tm-yX8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A8Y-Zm-miX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1716" y="-171.36431784107947"/>
         </scene>
     </scenes>
     <resources>

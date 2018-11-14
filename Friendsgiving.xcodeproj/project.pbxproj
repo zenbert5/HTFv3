@@ -17,6 +17,8 @@
 		E12E71C4219B5601009417FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E12E71C2219B5601009417FC /* LaunchScreen.storyboard */; };
 		E12E71CF219B5601009417FC /* FriendsgivingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E71CE219B5601009417FC /* FriendsgivingTests.swift */; };
 		E12E71DA219B5601009417FC /* FriendsgivingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E71D9219B5601009417FC /* FriendsgivingUITests.swift */; };
+		E18263E5219BA697004F7F66 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18263E4219BA697004F7F66 /* EventsTableViewController.swift */; };
+		E18263E7219BA773004F7F66 /* EventCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18263E6219BA773004F7F66 /* EventCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		E12E71D5219B5601009417FC /* FriendsgivingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendsgivingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12E71D9219B5601009417FC /* FriendsgivingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsgivingUITests.swift; sourceTree = "<group>"; };
 		E12E71DB219B5601009417FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E18263E4219BA697004F7F66 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		E18263E6219BA773004F7F66 /* EventCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 		E12E71B5219B55FE009417FC /* Friendsgiving */ = {
 			isa = PBXGroup;
 			children = (
+				E18263E4219BA697004F7F66 /* EventsTableViewController.swift */,
+				E18263E6219BA773004F7F66 /* EventCellTableViewCell.swift */,
 				E12E71B6219B55FE009417FC /* AppDelegate.swift */,
 				C1ACBB02219B7B4900B8654A /* FriendsToo.xcdatamodeld */,
 				E12E71B8219B55FE009417FC /* LoginViewController.swift */,
@@ -267,7 +273,9 @@
 			files = (
 				E12E71B9219B55FE009417FC /* LoginViewController.swift in Sources */,
 				E12E71BF219B55FE009417FC /* Friendsgiving.xcdatamodeld in Sources */,
+				E18263E5219BA697004F7F66 /* EventsTableViewController.swift in Sources */,
 				E12E71B7219B55FE009417FC /* AppDelegate.swift in Sources */,
+				E18263E7219BA773004F7F66 /* EventCellTableViewCell.swift in Sources */,
 				E10F2C04219B5FAB00A10314 /* RegisterViewController.swift in Sources */,
 				C1ACBB04219B7B4900B8654A /* FriendsToo.xcdatamodeld in Sources */,
 			);
