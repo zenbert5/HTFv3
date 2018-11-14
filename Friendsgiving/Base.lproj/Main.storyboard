@@ -330,13 +330,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dishes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eL-DY-6IZ">
-                                <rect key="frame" x="157.5" y="181" width="60" height="24"/>
+                                <rect key="frame" x="158" y="181" width="59.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.95652300119400024" green="0.93484324216842651" blue="0.87787014245986938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="23u-lh-H5J" firstAttribute="bottom" secondItem="O9X-Sa-g6l" secondAttribute="bottom" constant="20" id="GgN-58-w3A"/>
                             <constraint firstItem="O9X-Sa-g6l" firstAttribute="centerX" secondItem="d9A-Wy-pYx" secondAttribute="centerX" id="Gpf-VS-Yfs"/>
@@ -360,11 +360,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="ecd-JW-2s8">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="9Ak-BW-sC3">
+                            <color key="tintColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="doneButtonPressed:" destination="QHV-x4-IPY" id="iDk-Zo-e4G"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add Dish" id="JYX-ef-C3u"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add Dish" id="JYX-ef-C3u">
+                            <color key="tintColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="eventDateLabel" destination="LEa-SV-c8g" id="svV-UP-Wt4"/>
