@@ -23,6 +23,8 @@
 		E12E71DA219B5601009417FC /* FriendsgivingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E71D9219B5601009417FC /* FriendsgivingUITests.swift */; };
 		E18263E5219BA697004F7F66 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18263E4219BA697004F7F66 /* EventsTableViewController.swift */; };
 		E18263E7219BA773004F7F66 /* EventCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18263E6219BA773004F7F66 /* EventCellTableViewCell.swift */; };
+		E18263E9219C92F6004F7F66 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18263E8219C92F6004F7F66 /* DetailsViewController.swift */; };
+		E18263EB219C95A0004F7F66 /* DishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18263EA219C95A0004F7F66 /* DishTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		E12E71DB219B5601009417FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E18263E4219BA697004F7F66 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		E18263E6219BA773004F7F66 /* EventCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellTableViewCell.swift; sourceTree = "<group>"; };
+		E18263E8219C92F6004F7F66 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		E18263EA219C95A0004F7F66 /* DishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 		E12E71B5219B55FE009417FC /* Friendsgiving */ = {
 			isa = PBXGroup;
 			children = (
+				E18263EA219C95A0004F7F66 /* DishTableViewCell.swift */,
+				E18263E8219C92F6004F7F66 /* DetailsViewController.swift */,
 				E18263E4219BA697004F7F66 /* EventsTableViewController.swift */,
 				C1F1C1A9219BDFBA00BA7065 /* EventsDelegate.swift */,
 				E18263E6219BA773004F7F66 /* EventCellTableViewCell.swift */,
@@ -284,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E12E71B9219B55FE009417FC /* LoginViewController.swift in Sources */,
+				E18263EB219C95A0004F7F66 /* DishTableViewCell.swift in Sources */,
 				C19A63FE219BCF8400FE33F1 /* RegisterDelegate.swift in Sources */,
 				E12E71BF219B55FE009417FC /* Friendsgiving.xcdatamodeld in Sources */,
 				C1F1C1AC219C884600BA7065 /* EventsTableDelegate.swift in Sources */,
@@ -294,6 +301,7 @@
 				C1F1C1A8219BD8B400BA7065 /* AddEventViewController.swift in Sources */,
 				C1ACBB04219B7B4900B8654A /* FriendsToo.xcdatamodeld in Sources */,
 				C1F1C1AA219BDFBA00BA7065 /* EventsDelegate.swift in Sources */,
+				E18263E9219C92F6004F7F66 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
