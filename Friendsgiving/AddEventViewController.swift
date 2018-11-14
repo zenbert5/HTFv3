@@ -6,12 +6,13 @@
 //  Copyright © 2018 Robert Bridgeman. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class AddEventViewController: UIViewController {
 
     var delegate: EventsDelegate?
-    let url = URL(string: "http://localhost:8000/addEvent")!
+    
     
     @IBOutlet weak var eventName: UITextField!
     
@@ -21,17 +22,27 @@ class AddEventViewController: UIViewController {
     
     
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
-        
+        delegate?.dismissed()
     }
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
     
-        let jsonData: Dictionary<String, Any> = [
+        let url = URL(string: "http://localhost:8000/addEvent")!
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        let schedule = formatter.string(from: eventDate.date)
+        
+        
+        let jsonData = [
             "title" : eventName.text!,
             //"hostId : newUserEmail.text,
             "location": eventLocation.text!,
-            "schedule" : eventDate.date
-        ]
+            "schedule" : schedule
+            ] as [String : Any]
         
         var request = URLRequest(url: url)
         let session = URLSession.shared
@@ -49,7 +60,7 @@ class AddEventViewController: UIViewController {
                     let json = try JSONSerialization.jsonObject(with: userAddRes, options: [])
                     print(json)
                     
-                    self.delegate?.addAnEvent(json as! Dictionary<String, Any>)
+                    //self.delegate?.addAnEvent(json as! Dictionary<String, Any>)
                 } catch {
                     print(error)
                 }

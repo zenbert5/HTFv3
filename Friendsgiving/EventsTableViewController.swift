@@ -14,7 +14,7 @@ class EventsTableViewController: UITableViewController, EventsDelegate {
     
     var userInfo: [HotPotato]?
     var delegate: EventsTableDelegate?
-    var eventsData: [Dictionary<String, Any>]?
+    var eventsData = [Dictionary<String, Any>]()
     
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
@@ -43,7 +43,9 @@ class EventsTableViewController: UITableViewController, EventsDelegate {
                         print(json)
                         print(json[0])
                         self.eventsData = json
-                        self.tableView.reloadData()
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                     }
                 } catch {
                     print(error)
@@ -54,28 +56,28 @@ class EventsTableViewController: UITableViewController, EventsDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if let objCount = eventsData {
-//            return objCount.count
-//        } else {
-//            return 0
-//        }
-        return 1
+        return eventsData.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCellTableViewCell
         
-        if let displayData = eventsData {
-            print("here")
-            cell.eventName.text = displayData[indexPath.row]["title"] as? String
-            cell.eventHost.text = displayData[indexPath.row]["title"] as? String
-            cell.eventDate.text = displayData[indexPath.row]["location"] as? String
-        }
+        let displayData = eventsData
+        print("here")
+        cell.eventName.text = displayData[indexPath.row]["title"] as? String
+        cell.eventHost.text = displayData[indexPath.row]["title"] as? String
+        cell.eventDate.text = displayData[indexPath.row]["location"] as? String
+        
         return cell
     }
     
     func addAnEvent(_ eventInfo: Dictionary<String, Any>) {
         //
     }
+    
+    func dismissed() {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
