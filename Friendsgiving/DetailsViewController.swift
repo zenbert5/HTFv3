@@ -97,7 +97,7 @@ class DetailsViewController: UIViewController, EventsDelegate, UITableViewDelega
         let dish = (event["dishes"] as! [Dictionary<String, Any>])[indexPath.row]
         print("Dishes Count:", (event["dishes"] as! [Dictionary<String, Any>]).count)
         cell.dishLabel.text = dish["label"] as? String
-        cell.userDishLabel.text = userInfo!.name
+        cell.userDishLabel.text = dish["submittedBy"] as? String
         
         return cell
     }
