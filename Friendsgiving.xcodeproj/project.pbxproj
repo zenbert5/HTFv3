@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C19A63FE219BCF8400FE33F1 /* RegisterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A63FD219BCF8400FE33F1 /* RegisterDelegate.swift */; };
 		C1ACBB04219B7B4900B8654A /* FriendsToo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1ACBB02219B7B4900B8654A /* FriendsToo.xcdatamodeld */; };
 		E10F2C04219B5FAB00A10314 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10F2C03219B5FAB00A10314 /* RegisterViewController.swift */; };
 		E12E71B7219B55FE009417FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E71B6219B55FE009417FC /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C19A63FD219BCF8400FE33F1 /* RegisterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDelegate.swift; sourceTree = "<group>"; };
 		C1ACBB03219B7B4900B8654A /* FriendsToo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FriendsToo.xcdatamodel; sourceTree = "<group>"; };
 		E10F2C03219B5FAB00A10314 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E12E71B3219B55FE009417FC /* Friendsgiving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friendsgiving.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 				E12E71B6219B55FE009417FC /* AppDelegate.swift */,
 				C1ACBB02219B7B4900B8654A /* FriendsToo.xcdatamodeld */,
 				E12E71B8219B55FE009417FC /* LoginViewController.swift */,
+				C19A63FD219BCF8400FE33F1 /* RegisterDelegate.swift */,
 				E12E71BA219B55FE009417FC /* Main.storyboard */,
 				E10F2C03219B5FAB00A10314 /* RegisterViewController.swift */,
 				E12E71C0219B5601009417FC /* Assets.xcassets */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E12E71B9219B55FE009417FC /* LoginViewController.swift in Sources */,
+				C19A63FE219BCF8400FE33F1 /* RegisterDelegate.swift in Sources */,
 				E12E71BF219B55FE009417FC /* Friendsgiving.xcdatamodeld in Sources */,
 				E18263E5219BA697004F7F66 /* EventsTableViewController.swift in Sources */,
 				E12E71B7219B55FE009417FC /* AppDelegate.swift in Sources */,

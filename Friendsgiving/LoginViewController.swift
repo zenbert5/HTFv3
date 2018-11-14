@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, RegisterDelegate {
     
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -26,23 +26,28 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         checkUserExist()
+        
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let navController = segue.destination as! UINavigationController
+//
+//        if segue.identifier == "newUserSegue" {
+//            _ = navController.topViewController as! RegisterViewController
+//        }
+//
+//        if segue.identifier == "loginSegue" {
+//            let destination = navController.topViewController as! EventsTableViewController
+//            destination.userInfo = thisUser[0]
+//        }
+//    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navController = segue.destination as! UINavigationController
-        
-        if segue.identifier == "registerSegue" {
-            let destination = navController.topViewController as! RegisterViewController
-        }
-        
-        if segue.identifier == "loginSegue" {
-            let destination =
-        }
-        
-        
-        destination.userInfo = thisUser
+        let addDestination = navController.topViewController as! RegisterViewController
+        addDestination.delegate = self
     }
-
+    
     func checkUserExist() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "HotPotato")
         do {
@@ -50,10 +55,15 @@ class LoginViewController: UIViewController {
             thisUser = result as! [HotPotato]
             if thisUser.count == 0 {
                 print("no user")
+                
             }
         } catch {
             print("\(error)")
         }
+    }
+    
+    func dismissed() {
+        dismiss(animated: true, completion: nil)
     }
 
 }

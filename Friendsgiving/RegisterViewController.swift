@@ -14,16 +14,19 @@ class RegisterViewController: UIViewController {
     
     let url = URL(string: "http://localhost:8000/addUser")!
     
-
+    var delegate: RegisterDelegate?
 
     @IBOutlet weak var newUserName: UITextField!
     @IBOutlet weak var newUserEmail: UITextField!
     @IBOutlet weak var newUserPassword: UITextField!
+    @IBAction func cancelRegistration(_ sender: UIBarButtonItem) {
+        delegate?.dismissed()
+    }
     
     @IBAction func userPressedRegister(_ sender: UIButton) {
         
         let jsonData = [
-            //"name" : newUserName.text,
+            "name" : newUserName.text,
             "email" : newUserEmail.text,
             "password" : newUserPassword.text
         ]
@@ -43,6 +46,7 @@ class RegisterViewController: UIViewController {
                 do {
                     let json = try JSONSerialization.jsonObject(with: userAddRes, options: [])
                     print(json)
+                    self.performSegue(withIdentifier: "RegisterToEvents", sender: self)
                 } catch {
                     print(error)
                 }
@@ -57,4 +61,14 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navController = segue.destination as! UINavigationController
+        let destination = navController.topViewController as! EventsTableViewController
+        if segue.identifier == "RegisterToEvents" {
+            if let userData = sender as? HotPotato {
+                destination.userInfo = userData
+            }
+        }
+    }
+    
 }
