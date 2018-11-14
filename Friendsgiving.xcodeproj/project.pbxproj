@@ -25,6 +25,7 @@
 		E18263E7219BA773004F7F66 /* EventCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18263E6219BA773004F7F66 /* EventCellTableViewCell.swift */; };
 		E18263E9219C92F6004F7F66 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18263E8219C92F6004F7F66 /* DetailsViewController.swift */; };
 		E18263EB219C95A0004F7F66 /* DishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18263EA219C95A0004F7F66 /* DishTableViewCell.swift */; };
+		E18263ED219C9CA9004F7F66 /* AddDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18263EC219C9CA9004F7F66 /* AddDishViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		E18263E6219BA773004F7F66 /* EventCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellTableViewCell.swift; sourceTree = "<group>"; };
 		E18263E8219C92F6004F7F66 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		E18263EA219C95A0004F7F66 /* DishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishTableViewCell.swift; sourceTree = "<group>"; };
+		E18263EC219C9CA9004F7F66 /* AddDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDishViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				E12E71B8219B55FE009417FC /* LoginViewController.swift */,
 				C19A63FD219BCF8400FE33F1 /* RegisterDelegate.swift */,
 				E12E71BA219B55FE009417FC /* Main.storyboard */,
+				E18263EC219C9CA9004F7F66 /* AddDishViewController.swift */,
 				C1F1C1A7219BD8B400BA7065 /* AddEventViewController.swift */,
 				E10F2C03219B5FAB00A10314 /* RegisterViewController.swift */,
 				E12E71C0219B5601009417FC /* Assets.xcassets */,
@@ -299,6 +302,7 @@
 				E18263E7219BA773004F7F66 /* EventCellTableViewCell.swift in Sources */,
 				E10F2C04219B5FAB00A10314 /* RegisterViewController.swift in Sources */,
 				C1F1C1A8219BD8B400BA7065 /* AddEventViewController.swift in Sources */,
+				E18263ED219C9CA9004F7F66 /* AddDishViewController.swift in Sources */,
 				C1ACBB04219B7B4900B8654A /* FriendsToo.xcdatamodeld in Sources */,
 				C1F1C1AA219BDFBA00BA7065 /* EventsDelegate.swift in Sources */,
 				E18263E9219C92F6004F7F66 /* DetailsViewController.swift in Sources */,
