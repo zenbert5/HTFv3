@@ -10,4 +10,5 @@ import UIKit
 
 protocol RegisterDelegate: class {
     func dismissed()
+    func registerUser(_ newUserInput: Dictionary<String, Any>)
 }

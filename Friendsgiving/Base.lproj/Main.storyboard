@@ -51,7 +51,7 @@
                                     <color key="titleColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="A9a-7Y-00C" kind="presentation" identifier="LoginToRegister" modalTransitionStyle="flipHorizontal" id="NJA-ao-09s"/>
+                                    <segue destination="A9a-7Y-00C" kind="presentation" identifier="LoginToRegister" id="NJA-ao-09s"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,7 +113,6 @@
                                 <state key="normal" title="Register!"/>
                                 <connections>
                                     <action selector="userPressedRegister:" destination="ts2-mh-Pvy" eventType="touchUpInside" id="6VN-nA-LwW"/>
-                                    <segue destination="bVt-PW-8fB" kind="presentation" identifier="RegisterToEvents" id="96m-wm-bqk"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Kd-g4-4qx">
@@ -162,7 +161,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Coa-h5-BrF">
                             <color key="tintColor" red="0.34806495900000001" green="0.18579110500000001" blue="0.1033953205" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="cancelRegistration:" destination="ts2-mh-Pvy" id="KgE-5p-edZ"/>
+                                <action selector="cancelRegistration:" destination="ts2-mh-Pvy" id="Mwk-KO-OWR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -392,7 +391,4 @@
         <image name="basted" width="292" height="284"/>
         <image name="main" width="239" height="254"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="96m-wm-bqk"/>
-    </inferredMetricsTieBreakers>
 </document>

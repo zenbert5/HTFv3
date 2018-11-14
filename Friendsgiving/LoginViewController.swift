@@ -29,24 +29,26 @@ class LoginViewController: UIViewController, RegisterDelegate {
         
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let navController = segue.destination as! UINavigationController
-//
-//        if segue.identifier == "newUserSegue" {
-//            _ = navController.topViewController as! RegisterViewController
-//        }
-//
-//        if segue.identifier == "loginSegue" {
-//            let destination = navController.topViewController as! EventsTableViewController
-//            destination.userInfo = thisUser[0]
-//        }
-//    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navController = segue.destination as! UINavigationController
-        let addDestination = navController.topViewController as! RegisterViewController
-        addDestination.delegate = self
+
+        if segue.identifier == "loginToRegister" {
+            print("segue to register from login")
+            let destination = navController.topViewController as! RegisterViewController
+            destination.delegate = self
+        }
+
+        if segue.identifier == "loginSegue" {
+            let destination = navController.topViewController as! EventsTableViewController
+            destination.userInfo = thisUser[0]
+        }
     }
+
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let navController = segue.destination as! UINavigationController
+//        let addDestination = navController.topViewController as! RegisterViewController
+//        addDestination.delegate = self
+//    }
     
     func checkUserExist() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "HotPotato")
@@ -66,5 +68,31 @@ class LoginViewController: UIViewController, RegisterDelegate {
         dismiss(animated: true, completion: nil)
     }
 
+    func registerUser(_ newUserInput: Dictionary<String, Any>) {
+        let url = URL(string: "http://localhost:8000/addUser")!
+        var request = URLRequest(url: url)
+        let session = URLSession.shared
+        request.allHTTPHeaderFields = [ "Content-Type": "application/json" ]
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONSerialization.data(withJSONObject: newUserInput)
+        print("http json format --> ", request.httpBody!)
+        
+        session.dataTask(with: request, completionHandler: {
+            // see: Swift closure expression syntax
+            data, response, error in
+            
+            if let userAddRes = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: userAddRes, options: [])
+                    print(json)
+                    self.performSegue(withIdentifier: "RegisterToEvents", sender: self)
+                } catch {
+                    print(error)
+                }
+            }
+        })
+        dismissed()
+    }
+    
 }
 

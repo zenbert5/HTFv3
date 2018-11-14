@@ -48,7 +48,8 @@ class AddEventViewController: UIViewController {
                 do {
                     let json = try JSONSerialization.jsonObject(with: userAddRes, options: [])
                     print(json)
-                    //delegate?.addAnEvent(json)
+                    
+                    self.delegate?.addAnEvent(json as! Dictionary<String, Any>)
                 } catch {
                     print(error)
                 }
