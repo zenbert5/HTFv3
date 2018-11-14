@@ -11,11 +11,12 @@ import UIKit
 class DetailsViewController: UIViewController, EventsDelegate, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var eventDateLabel: UILabel!
-    @IBOutlet weak var eventUserLabel: UILabel!
+//    @IBOutlet weak var eventUserLabel: UILabel!
     @IBOutlet weak var eventLocationLabel: UILabel!
     
     var delegate: EventsDelegate?
     var event = Dictionary<String, Any>()
+    var userInfo:HotPotato?
     
     @IBOutlet weak var detailsTableView: UITableView!
     
@@ -25,9 +26,19 @@ class DetailsViewController: UIViewController, EventsDelegate, UITableViewDelega
         detailsTableView.delegate = self
         detailsTableView.dataSource = self
         eventNameLabel.text = event["title"] as? String
-        eventUserLabel.text = event["name"] as? String
+//        eventUserLabel.text = event["name"] as? String
         eventLocationLabel.text = event["location"] as? String
-        eventDateLabel.text = event["schedule"] as? String
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        let eventDate = formatter.date(from: (event["schedule"] as! String))
+        
+        formatter.dateFormat = "MM-dd-yyyy HH:mm"
+        let eventDateString = formatter.string(from: eventDate!)
+
+        eventDateLabel.text = eventDateString
         
         // Do any additional setup after loading the view
         let url = URL(string: "http://localhost:8000/getDishes/" + (event["_id"] as! String))!
@@ -73,6 +84,7 @@ class DetailsViewController: UIViewController, EventsDelegate, UITableViewDelega
         let destination = nc.topViewController as! AddDishViewController
         destination.delegate = self
         destination.eventId = (event["_id"] as! String)
+        destination.userInfo = userInfo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,7 +97,7 @@ class DetailsViewController: UIViewController, EventsDelegate, UITableViewDelega
         let dish = (event["dishes"] as! [Dictionary<String, Any>])[indexPath.row]
         print("Dishes Count:", (event["dishes"] as! [Dictionary<String, Any>]).count)
         cell.dishLabel.text = dish["label"] as? String
-        //cell.userDishLabel.text = event["dishes"][IndexPath.row]["submitted"]
+        cell.userDishLabel.text = userInfo!.name
         
         return cell
     }

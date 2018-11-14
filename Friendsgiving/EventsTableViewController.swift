@@ -12,7 +12,7 @@ class EventsTableViewController: UITableViewController, EventsDelegate {
 
     let url = URL(string: "http://localhost:8000/events")!
     
-    var userInfo: [HotPotato]?
+    var userInfo: HotPotato?
     var delegate: EventsTableDelegate?
     var eventsData = [Dictionary<String, Any>]()
     
@@ -41,7 +41,6 @@ class EventsTableViewController: UITableViewController, EventsDelegate {
                 do {
                     if let json = try JSONSerialization.jsonObject(with: eventData, options: JSONSerialization.ReadingOptions.mutableContainers) as? [Dictionary<String, Any>] {
                         print(json)
-                        print(json[0])
                         self.eventsData = json
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
@@ -63,11 +62,16 @@ class EventsTableViewController: UITableViewController, EventsDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCellTableViewCell
         
         let displayData = eventsData
-        print("here")
-        cell.eventName.text = displayData[indexPath.row]["title"] as? String
-        cell.eventHost.text = displayData[indexPath.row]["title"] as? String
-        cell.eventDate.text = displayData[indexPath.row]["location"] as? String
         
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        cell.eventDate.text = dateFormatter.string(from: displayData[indexPath.row]["schedule"] as! Date)
+        cell.eventName.text = displayData[indexPath.row]["title"] as? String
+        cell.eventHost.text = displayData[indexPath.row]["location"] as? String
+        if let string2 = displayData[indexPath.row]["schedule"] as? String {
+        
+            cell.eventDate.text = String(string2.prefix(10))
+        }
         return cell
     }
     
@@ -78,6 +82,8 @@ class EventsTableViewController: UITableViewController, EventsDelegate {
             destination.delegate = self
         } else if let destination = nc.topViewController as? DetailsViewController {
             destination.delegate = self
+            print("User Name: ", userInfo!.name)
+            destination.userInfo = userInfo
             let event = sender as! Dictionary<String, Any>
             destination.event = event
         }

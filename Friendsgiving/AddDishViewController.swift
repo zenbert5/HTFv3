@@ -12,6 +12,7 @@ class AddDishViewController: UIViewController {
 
     var delegate: EventsDelegate?
     var eventId: String?
+    var userInfo: HotPotato?
     
     @IBOutlet weak var newDish: UITextField!
     
@@ -23,7 +24,8 @@ class AddDishViewController: UIViewController {
         let url = URL(string: "http://localhost:8000/addDishByEvent/" + eventId!)!
 
         let jsonData = [
-            "label" : newDish.text!
+            "label" : newDish.text!,
+            "submittedBy" : (userInfo!.name as! String)
             ] as [String : Any]
 
         var request = URLRequest(url: url)

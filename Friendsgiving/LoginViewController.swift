@@ -13,7 +13,7 @@ class LoginViewController: UIViewController, RegisterDelegate, EventsTableDelega
     
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var thisUser = [HotPotato]()
+    var thisUser:HotPotato?
     
     @IBOutlet weak var emailInputBox: UITextField!
     @IBOutlet weak var passwordInputBox: UITextField!
@@ -26,13 +26,22 @@ class LoginViewController: UIViewController, RegisterDelegate, EventsTableDelega
             let request = URLRequest(url: url)
             let session = URLSession.shared
             
-            session.dataTask(with: request, completionHandler: {
+            let task = session.dataTask(with: request, completionHandler: {
                 // see: Swift closure expression syntax
                 data, response, error in
                 
                 if let userData = data {
                     do {
                         let json = try JSONSerialization.jsonObject(with: userData, options: []) as! Dictionary<String, Any>
+                        
+                        self.thisUser = HotPotato(context: self.managedObjectContext)
+                        
+                        self.thisUser!.name = json["name"] as? String
+                        
+                        DispatchQueue.main.async {
+                            self.performSegue(withIdentifier: "loginSegue", sender: self)
+                        }
+
                         print(json)
                         
                         
@@ -41,11 +50,11 @@ class LoginViewController: UIViewController, RegisterDelegate, EventsTableDelega
                     }
                 }
             })
+            
+            task.resume()
         } else {
             return
         }
-        performSegue(withIdentifier: "loginSegue", sender: self)
-
     }
     
     override func viewDidLoad() {
@@ -67,6 +76,7 @@ class LoginViewController: UIViewController, RegisterDelegate, EventsTableDelega
 
         if segue.identifier == "loginSegue" {
             let destination = navController.topViewController as! EventsTableViewController
+            print("This User Name:", thisUser!.name)
             destination.userInfo = thisUser
             destination.delegate = self
         }
@@ -82,14 +92,7 @@ class LoginViewController: UIViewController, RegisterDelegate, EventsTableDelega
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "HotPotato")
         do {
             let result = try managedObjectContext.fetch(request)
-            thisUser = result as! [HotPotato]
-            if thisUser.count == 0 {
-                print("no user")
-            } else {
-                for data in thisUser {
-                    print(data)
-                }
-            }
+            thisUser = (result as! [HotPotato]).first
         } catch {
             print("\(error)")
         }
