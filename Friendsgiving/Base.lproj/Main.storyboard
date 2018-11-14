@@ -160,6 +160,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="KVk-yG-FH4">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Coa-h5-BrF">
+                            <color key="tintColor" red="0.34806495900000001" green="0.18579110500000001" blue="0.1033953205" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelRegistration:" destination="ts2-mh-Pvy" id="KgE-5p-edZ"/>
                             </connections>
@@ -175,7 +176,7 @@
             </objects>
             <point key="canvasLocation" x="1631.2" y="411.544227886057"/>
         </scene>
-        <!--Friendsgiving-->
+        <!--Friendsgiving Events-->
         <scene sceneID="0Gq-or-KfQ">
             <objects>
                 <tableViewController id="COS-Ty-MvF" customClass="EventsTableViewController" customModule="Friendsgiving" customModuleProvider="target" sceneMemberID="viewController">
@@ -228,18 +229,91 @@
                             <outlet property="delegate" destination="COS-Ty-MvF" id="GyW-ez-S8a"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Friendsgiving" id="kL9-CD-wdA">
+                    <navigationItem key="navigationItem" title="Friendsgiving Events" id="kL9-CD-wdA">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="vLe-2x-d2f">
                             <color key="tintColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Event" id="PIf-tc-hSe">
                             <color key="tintColor" red="0.3363304734" green="0.1703346074" blue="0.087122626600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="V2N-bd-BgR" kind="presentation" identifier="addEventSegue" id="IX6-o0-ToO"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPZ-ED-g8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3543" y="-571"/>
+            <point key="canvasLocation" x="3276" y="-519"/>
+        </scene>
+        <!--Add Event-->
+        <scene sceneID="rVO-AH-aJz">
+            <objects>
+                <viewController id="ssC-rT-5OL" customClass="AddEventViewController" customModule="Friendsgiving" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cYL-A2-W9B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Event" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hht-Cm-ukp">
+                                <rect key="frame" x="20" y="84" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location of Event" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zhc-f7-wQX">
+                                <rect key="frame" x="20" y="134" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="J1b-Ou-kfO">
+                                <rect key="frame" x="0.0" y="184" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="563862013.34427905">
+                                    <!--2018-11-14 04:20:13 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="J1b-Ou-kfO" firstAttribute="top" secondItem="zhc-f7-wQX" secondAttribute="bottom" constant="20" id="39I-K5-kmc"/>
+                            <constraint firstItem="J1b-Ou-kfO" firstAttribute="leading" secondItem="0p4-cD-ewr" secondAttribute="leading" id="9Ca-a5-g3t"/>
+                            <constraint firstItem="Hht-Cm-ukp" firstAttribute="leading" secondItem="0p4-cD-ewr" secondAttribute="leading" constant="20" id="INe-OL-A9k"/>
+                            <constraint firstItem="zhc-f7-wQX" firstAttribute="centerX" secondItem="cYL-A2-W9B" secondAttribute="centerX" id="IaZ-px-ngg"/>
+                            <constraint firstItem="0p4-cD-ewr" firstAttribute="trailing" secondItem="Hht-Cm-ukp" secondAttribute="trailing" constant="20" id="Qix-02-Cfx"/>
+                            <constraint firstItem="Hht-Cm-ukp" firstAttribute="centerX" secondItem="cYL-A2-W9B" secondAttribute="centerX" id="Tko-RG-fBe"/>
+                            <constraint firstItem="Hht-Cm-ukp" firstAttribute="top" secondItem="0p4-cD-ewr" secondAttribute="top" constant="20" id="Ui2-Df-LlH"/>
+                            <constraint firstItem="zhc-f7-wQX" firstAttribute="leading" secondItem="0p4-cD-ewr" secondAttribute="leading" constant="20" id="dte-1K-nOd"/>
+                            <constraint firstItem="zhc-f7-wQX" firstAttribute="top" secondItem="Hht-Cm-ukp" secondAttribute="bottom" constant="20" id="ggR-rC-vId"/>
+                            <constraint firstItem="J1b-Ou-kfO" firstAttribute="trailing" secondItem="0p4-cD-ewr" secondAttribute="trailing" id="htt-Fv-Dfd"/>
+                            <constraint firstItem="0p4-cD-ewr" firstAttribute="trailing" secondItem="zhc-f7-wQX" secondAttribute="trailing" constant="20" id="rUD-x0-94y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0p4-cD-ewr"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Event" id="bad-AS-LyU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bBh-RK-9xo">
+                            <color key="tintColor" red="0.34806495904922485" green="0.18579110503196716" blue="0.10339532047510147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cancelButton:" destination="ssC-rT-5OL" id="1Qs-MB-Lim"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Udy-5f-G0t">
+                            <color key="tintColor" red="0.34806495904922485" green="0.18579110503196716" blue="0.10339532047510147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="saveButton:" destination="ssC-rT-5OL" id="GsH-HT-pOq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="eventDate" destination="J1b-Ou-kfO" id="V49-Br-XLJ"/>
+                        <outlet property="eventLocation" destination="zhc-f7-wQX" id="Buf-aL-VTf"/>
+                        <outlet property="eventName" destination="Hht-Cm-ukp" id="iIs-5B-kuW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7pk-oM-NsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4362" y="-408"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MMc-IC-OHW">
@@ -257,7 +331,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ih7-KM-ce9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-250" y="-188"/>
+            <point key="canvasLocation" x="-274" y="-291"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="y0z-RA-xMq">
@@ -275,7 +349,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8Y-Zm-miX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2452" y="-250"/>
+            <point key="canvasLocation" x="2462" y="-156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LuW-o4-rZ9">
@@ -295,12 +369,30 @@
             </objects>
             <point key="canvasLocation" x="692" y="411.544227886057"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hQu-wJ-zZX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V2N-bd-BgR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q6p-jL-on5">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ssC-rT-5OL" kind="relationship" relationship="rootViewController" id="fbo-BQ-LJ0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iry-G8-CAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4230" y="-1268"/>
+        </scene>
     </scenes>
     <resources>
         <image name="basted" width="292" height="284"/>
         <image name="main" width="239" height="254"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CfC-M6-uBy"/>
+        <segue reference="96m-wm-bqk"/>
     </inferredMetricsTieBreakers>
 </document>

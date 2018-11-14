@@ -38,6 +38,7 @@ const EventSchema = new mongoose.Schema({
     title: { type: String, required: [true, 'Event name cannot be empty'], minlength: [3, 'Event name must be 3 characters or longer'] },
     hostName: { type: String },
     hostId: { type: String },
+    location: { type: String },
     dishes: [DishSchema],
     schedule: { type: Date }
 }, { timestamps: true })
@@ -55,7 +56,7 @@ app.get('/events', (req, res) => {
             res.json(err);
         }
         else {
-            console.log(`fetched authors ${data}`);
+            console.log(`fetched events ${data}`);
             res.json(data);
         }
     })

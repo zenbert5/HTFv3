@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C19A63FE219BCF8400FE33F1 /* RegisterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A63FD219BCF8400FE33F1 /* RegisterDelegate.swift */; };
 		C1ACBB04219B7B4900B8654A /* FriendsToo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1ACBB02219B7B4900B8654A /* FriendsToo.xcdatamodeld */; };
+		C1F1C1A8219BD8B400BA7065 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F1C1A7219BD8B400BA7065 /* AddEventViewController.swift */; };
+		C1F1C1AA219BDFBA00BA7065 /* EventsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F1C1A9219BDFBA00BA7065 /* EventsDelegate.swift */; };
 		E10F2C04219B5FAB00A10314 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10F2C03219B5FAB00A10314 /* RegisterViewController.swift */; };
 		E12E71B7219B55FE009417FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E71B6219B55FE009417FC /* AppDelegate.swift */; };
 		E12E71B9219B55FE009417FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E71B8219B55FE009417FC /* LoginViewController.swift */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		C19A63FD219BCF8400FE33F1 /* RegisterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDelegate.swift; sourceTree = "<group>"; };
 		C1ACBB03219B7B4900B8654A /* FriendsToo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FriendsToo.xcdatamodel; sourceTree = "<group>"; };
+		C1F1C1A7219BD8B400BA7065 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		C1F1C1A9219BDFBA00BA7065 /* EventsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDelegate.swift; sourceTree = "<group>"; };
 		E10F2C03219B5FAB00A10314 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E12E71B3219B55FE009417FC /* Friendsgiving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friendsgiving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12E71B6219B55FE009417FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,12 +114,14 @@
 			isa = PBXGroup;
 			children = (
 				E18263E4219BA697004F7F66 /* EventsTableViewController.swift */,
+				C1F1C1A9219BDFBA00BA7065 /* EventsDelegate.swift */,
 				E18263E6219BA773004F7F66 /* EventCellTableViewCell.swift */,
 				E12E71B6219B55FE009417FC /* AppDelegate.swift */,
 				C1ACBB02219B7B4900B8654A /* FriendsToo.xcdatamodeld */,
 				E12E71B8219B55FE009417FC /* LoginViewController.swift */,
 				C19A63FD219BCF8400FE33F1 /* RegisterDelegate.swift */,
 				E12E71BA219B55FE009417FC /* Main.storyboard */,
+				C1F1C1A7219BD8B400BA7065 /* AddEventViewController.swift */,
 				E10F2C03219B5FAB00A10314 /* RegisterViewController.swift */,
 				E12E71C0219B5601009417FC /* Assets.xcassets */,
 				E12E71C2219B5601009417FC /* LaunchScreen.storyboard */,
@@ -281,7 +287,9 @@
 				E12E71B7219B55FE009417FC /* AppDelegate.swift in Sources */,
 				E18263E7219BA773004F7F66 /* EventCellTableViewCell.swift in Sources */,
 				E10F2C04219B5FAB00A10314 /* RegisterViewController.swift in Sources */,
+				C1F1C1A8219BD8B400BA7065 /* AddEventViewController.swift in Sources */,
 				C1ACBB04219B7B4900B8654A /* FriendsToo.xcdatamodeld in Sources */,
+				C1F1C1AA219BDFBA00BA7065 /* EventsDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

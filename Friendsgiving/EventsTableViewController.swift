@@ -8,13 +8,13 @@
 
 import UIKit
 
-class EventsTableViewController: UITableViewController {
+class EventsTableViewController: UITableViewController, EventsDelegate {
 
     let url = URL(string: "http://localhost:8000/events")!
     
     var userInfo: HotPotato?
     
-    var eventsData: NSDictionary?
+    var eventsData: [Dictionary<String, Any>]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +28,15 @@ class EventsTableViewController: UITableViewController {
             // see: Swift closure expression syntax
             data, response, error in
             
+            print("fetching events data")
             if let eventData = data {
+                print("eventData = ", eventData)
                 do {
-                    if let json = try JSONSerialization.jsonObject(with: eventData, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
-                            print(json)
+                    if let json = try JSONSerialization.jsonObject(with: eventData, options: JSONSerialization.ReadingOptions.mutableContainers) as? [Dictionary<String, Any>] {
+                        print(json)
+                        print(json[0])
                         self.eventsData = json
-                        if let data = self.eventsData {
-                            print(data)
-                        }
+                        self.tableView.reloadData()
                     }
                 } catch {
                     print(error)
@@ -46,21 +47,28 @@ class EventsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let objCount = eventsData {
-            return objCount.count
-        } else {
-            return 0
-        }
+//        if let objCount = eventsData {
+//            return objCount.count
+//        } else {
+//            return 0
+//        }
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCellTableViewCell
         
-//        cell.eventName.text = [indexPath.row]
-//        cell.eventHost.text = hosts[indexPath.row]
-//        cell.eventDate.text = hosts[indexPath.row]
-
+        if let displayData = eventsData {
+            print("here")
+            cell.eventName.text = displayData[indexPath.row]["title"] as? String
+            cell.eventHost.text = displayData[indexPath.row]["title"] as? String
+            cell.eventDate.text = displayData[indexPath.row]["location"] as? String
+        }
         return cell
+    }
+    
+    func addAnEvent(_ eventInfo: Dictionary<String, Any>) {
+        //
     }
 }
 
