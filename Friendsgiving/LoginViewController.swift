@@ -27,6 +27,13 @@ class LoginViewController: UIViewController {
         
         checkUserExist()
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let navController = segue.destination as! UINavigationController
+//        
+//        _ = navController.topViewController as! RegisterViewController
+//        
+//    }
 
     func checkUserExist() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "HotPotato")
